@@ -34,6 +34,8 @@
 # define SPAN_HPP
 # include <iostream>
 # include <vector>
+# include <algorithm>
+# include <limits.h>
 
 class Span
 {
@@ -47,9 +49,10 @@ class Span
 			Span const &operator=(Span const &);
 			~Span();
 			void addNumber(int);
-			int shortSpan();// la diferencia entre valores mas pequena
-			int longSpan();//y la mas grande
-			void addTonsNumbers(); //add numbers randomly, always 256? Maybe an option to put a multiplyer of 2?;
+			void addNumber(int, unsigned int);
+			int shortestSpan();// la diferencia entre valores mas pequena
+			int longestSpan();//y la mas grande
+			
 
 };
 

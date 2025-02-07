@@ -36,7 +36,7 @@ vpath %.cpp
 #########
 
 #########
-OBJ_DIR = build
+OBJ_DIR = .build
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 DEP = $(addsuffix .d, $(basename $(OBJ)))
 #########
