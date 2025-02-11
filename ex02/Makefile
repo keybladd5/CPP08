@@ -28,7 +28,7 @@ NC			=	\033[0m
 YELLOW		=	\033[38;5;190m
 
 #########
-FILES = main MutantStack
+FILES = main 
 
 SRC = $(addsuffix .cpp, $(FILES))
 
