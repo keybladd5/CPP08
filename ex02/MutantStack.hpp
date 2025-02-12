@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* std::stack<T>             La pila
-    └── container_type       Tipo del contenedor interno (std::deque<T> por defecto)
-          └── iterator       Tipo de iterador asociado al contenedor interno
+/* std::stack<T>
+    └── (class member) container_type (to access this container, named 'c', which is a 'deque' by default and is protected in the base class)
+          └── (class member) iterator
 */
 
 #ifndef MUTANTSTACK_HPP
@@ -31,9 +31,9 @@ class MutantStack : public std::stack<T>
 			MutantStack const &operator=(MutantStack const &);
 			~MutantStack();
 			typedef typename std::stack<T>::container_type::iterator iterator;
+			typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 			iterator begin();
 			iterator end();
-			typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 			const_iterator begin() const ;
 			const_iterator end() const ; 
 };

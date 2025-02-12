@@ -32,6 +32,11 @@ MutantStack<T> const &MutantStack<T>::operator=(MutantStack<T> const &src)
 	return (*this);
 }
 
+// In this case and in the following ones, where you find the keyword typename,  
+// it is used to specify to the compiler that the concept "MutantStack<T>::iterator"  
+// is a data type.  
+// Without this keyword, the compiler does not know whether "iterator" in the  
+// MutantStack<T> template is a variable or a data type.  
 template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::begin()
 {
@@ -43,7 +48,10 @@ typename MutantStack<T>::iterator MutantStack<T>::end()
 {
 	return (this->c.end());
 }
-
+// Although 'iterator' is already defined via 'typedef' in the .hpp file,
+// the compiler still requires the 'typename' keyword here. This is because,
+// during template instantiation, it needs explicit confirmation that
+// 'MutantStack<T>::iterator' is a type.
 template <typename T>
 typename MutantStack<T>::const_iterator MutantStack<T>::begin() const
 {
