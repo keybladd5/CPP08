@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
-#include <vector>
-
 #define MAX_NBR 10
 
 int main(void)
